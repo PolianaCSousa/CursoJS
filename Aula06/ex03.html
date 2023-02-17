@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro script</title>
+    <style>
+        body {
+            background-color: rgb(201, 112, 142);
+            color: cornsilk;
+            font: normal 12pt Verdana;
+        }
+
+        h1 {
+            color: rgb(32, 32, 32);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Olá mundo!</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A aliquid, enim ullam quas vitae accusantium assumenda error porro ipsum, iusto ab ex nisi consequatur molestiae! Hic accusamus dolorem aperiam asperiores!</p>
+    <script>
+        var n1 = parseInt(window.prompt('Digite o primeiro número: ')) //o comando window.prompt retorna uma string, logo é preciso fazer conversões para conseguir somar dois números por exemplo
+        var n2 = Number.parseInt(window.prompt('Digite o segundo número: '))
+        var soma = n1 + n2;
+        window.alert(`O resultado da soma entre ${n1} e ${n2} é ${soma}.`)
+    </script>
+</body>
+</html>
