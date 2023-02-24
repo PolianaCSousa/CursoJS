@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com o DOM</title>
+    <style>
+        body {
+            background-color: rgb(235, 137, 186);
+            color: rgb(34, 34, 34);
+            font: normal 12pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com o DOM</h1>
+    <p>Fazendo alguns testes</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Sou uma div e tenho um id</div>
+    <div name="divinha">Sou uma div e tenho um nome</div>
+    <div class="colorida">Sou uma div e tenho uma classe</div>
+    <script>
+        window.document.write('Olá mundo! <br/>')
+        window.document.write(window.document.URL)
+
+        //SELECIONANDO OS ELEMENTOS DA ÁRVORE DOM POR MEIO DO NOME DA TAG
+        var p1 = document.getElementsByTagName('p')[0] //nesse caso devo indicar qual dos elementos eu quero. O primeiro parágrafo tem o índice 0, o segundo tem índice 1, o terceiro teria índice 2 e assim sucessivamente
+        document.write('<br/> Está escrito isso no primeiro parágrafo: ' + p1.innerText)
+        p1.style.color = 'blue'
+
+        var corpo = document.getElementsByTagName('body')[0]
+        //corpo.style.background = 'black'
+
+        //SELECIONANDO OS ELEMENTOS DA ÁRVORE DOM POR MEIO DO ID
+        var d = document.getElementById('msg')
+        document.write('<br/>' + d.innerText)
+        /*Posso fazer comandos diretamente (alteirei a mensagem da div): */
+        window.document.getElementById('msg').innerText = 'Olá'
+    
+        //SELECIONANDO OS ELEMENTOS DA ÁRVORE DOM POR MEIO DO NOME
+        var nome = document.getElementsByName('divinha')[0]
+        document.write('<br/>' + nome.innerText)
+
+        //SELECIONANDO OS ELEMENTOS DA ÁRVORE DOM POR MEIO DA CLASSE
+        var classe = document.getElementsByClassName('colorida')[0]
+        classe.style.color = 'red'
+
+        //SELECIONANDO OS ELEMENTOS DA ÁRVORE DOM POR MEIO DE SELETOR 
+        /*no CSS para classe usamos nomedatag.nomedaclasse 
+          e para id usamos nomedatag#nomedoid*/
+        var seletor = document.querySelector('div.colorida')
+        seletor.style.background = 'lightblue' 
+
+        var seletor2 = document.querySelector('div#msg')
+        seletor2.style.color = 'green'
+
+
+
+    </script>
+</body>
+</html>
