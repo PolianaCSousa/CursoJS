@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            font: normal 15pt Arial;
+            background: rgb(224, 71, 156);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        div {
+            background: grey;
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--DISPARANDO EVENTOS NO SCRIPT USANDO OS LISTENERS DO JS-->
+    <div id="area">
+        Interaja...
+    </div>
+    <div> Outra div </div>
+
+    <script>
+
+        //o listener deve estar de fora da funçao, uma vez que ele recebe como parametro, alem do evento, a funcao que sera disparada
+        area.addEventListener('click', clicar)
+
+        function clicar(){
+            
+            area.innerText = 'Você clicou aqui!'
+        }
+
+        var dentro = document.querySelector('div#area')
+        dentro.addEventListener('mouseenter', entrar)
+
+        function entrar(){
+            dentro.style.background = 'orange'
+        }
+
+
+        var saiu = document.querySelector('div#area')
+        saiu.addEventListener('mouseout', sair)
+
+        function sair(){
+            
+            saiu.style.background = 'rgb(224, 71, 156)'
+        }
+
+    </script>
+
+</body>
+</html>
