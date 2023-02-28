@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+
+    <style>
+        body {
+            font: normal 15pt Arial;
+            background-color: lemonchiffon;
+        }
+
+        div {
+            background-color: darkkhaki;
+            font: normal 18pt Verdana;
+            padding: 10px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+
+        input#botao{
+            font: normal 10pt Verdana;
+            background-color: darksalmon; 
+        }
+
+        h1 {
+            
+            text-align: center;
+        } 
+    
+    </style>
+
+</head>
+<body>
+    <h1>Verificação de Nacionalidade</h1>
+    Digite o nome do seu país de nascimento: <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar Nacionalidade" id="botao">
+   
+    <div id="resultado"></div>
+
+    <script>
+        var nacionalidade = document.getElementsByTagName('input')[1]
+        nacionalidade.addEventListener('click', verificar)
+
+        function verificar(){
+            var resultado = document.getElementById('resultado')
+            var pais = document.getElementById('pais')
+            if(pais.value == 'Brasil'){
+                resultado.innerHTML = '<p>Você é Brasileiro!</p>'
+            }else{
+                resultado.innerHTML = '<p>Você é Estrangeiro!</p>'
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
